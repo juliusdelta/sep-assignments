@@ -1,0 +1,5 @@
+What is Spatial Locality and why does it benefit performance?
+
+* Spacial locality benefits performance by logically assuming that similar location in memory will be required to complete a specific process
+or lookup. So instead of just pulling the specific location of a piece of data, it also pulls some of the surrounding data, which, in
+probability will be used to complete a process.

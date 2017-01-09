@@ -3,3 +3,20 @@ What is Spatial Locality and why does it benefit performance?
 * Spacial locality benefits performance by logically assuming that similar location in memory will be required to complete a specific process
 or lookup. So instead of just pulling the specific location of a piece of data, it also pulls some of the surrounding data, which, in
 probability will be used to complete a process.
+
+Bench Mark Answers
+
+Rehearsal -----------------------------------------------------------------                                                                                              │
+Array:                          0.000000   0.000000   0.000000 (  0.002582)                                                                                              │........
+Linked List:                    2.090000   0.000000   2.090000 (  2.104322)                                                                                              │
+5000 Array Elements:            0.000000   0.000000   0.000000 (  0.000002)                                                                                              │Finished in 0.0043 seconds (files took 0.08418 seconds to load)
+5000 Linked List Elements       0.000000   0.000000   0.000000 (  0.000163)                                                                                              │8 examples, 0 failures
+Remove Last Element in Array    0.000000   0.000000   0.000000 (  0.000006)                                                                                              │
+-------------------------------------------------------- total: 2.090000sec                                                                                              │03-linked-lists|checkpoint-3-assignment⚡ ⇒
+                                                                                                                                                                         │
+                                    user     system      total        real                                                                                               │
+Array:                          0.010000   0.000000   0.010000 (  0.001758)                                                                                              │
+Linked List:                    6.300000   0.010000   6.310000 (  6.319567)                                                                                              │
+5000 Array Elements:            0.000000   0.000000   0.000000 (  0.000003)                                                                                              │
+5000 Linked List Elements       0.000000   0.000000   0.000000 (  0.000155)                                                                                              │
+Remove Last Element in Array    0.000000   0.000000   0.000000 (  0.000007)

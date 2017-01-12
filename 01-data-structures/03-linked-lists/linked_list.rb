@@ -26,10 +26,8 @@ class LinkedList
       return nil
     end
 
-    find_specific_node(@tail)
-
-    @tail = @current_node
     @tail.next = nil
+    return
   end
 
   # This method prints out a representation of the list.
@@ -58,16 +56,12 @@ class LinkedList
   def delete(node)
     # removes head
     if node == @head
-      temp_node = @head.next
-      @head.next = nil
-      @head = temp_node
-      return
+        remove_front
+        return
     end
     # removes tail
     if node == @tail
-      find_specific_node(@tail)
-      @current_node.next = nil
-      @tail = @current_node
+      remove_tail
       return
     end
     # removes from middle

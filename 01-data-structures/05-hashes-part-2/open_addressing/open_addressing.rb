@@ -8,29 +8,25 @@ class OpenAddressing
   end
 
   def []=(key, value)
-    i = index(key, @items.size)
-    node = Node.new(key, value)
+    open_index = index(key, size)
+    final_index = next_open_index(open_index)
 
-    if @items[i] == nil
-      puts "Putting #{node} into #{i} index of the array..."
-      @items[i] = node
-      @item_count += 1
-    else
-      puts "#{i} was taken... Looking for next spot."
-      open_spot = next_open_index(i)
-      puts "Found a spot at #{open_spot}"
-
-      if open_spot == -1
-        puts "Resizing the Array"
+      while final_index == -1
         self.resize
-        self[key] = value
+        final_index = next_open_index(open_index)
         return
-      else
-        puts "Found an open index at #{open_spot}"
-        @items[open_spot] = node
-        @item_count += 1
       end
-    end
+
+      @items[final_index] = Node.new(key, value)
+  end
+
+    def [](key)
+      @items.each { |x|
+        if x != nil && x.key === key
+          return x.value
+        end
+      }
+      return nil
   end
 
   def [](key)
@@ -84,16 +80,18 @@ class OpenAddressing
 
   # Given an index, find the next open index in @items
   def next_open_index(index)
-    counter = index
-
-    while @items[counter] != nil
-      if counter == @items.size - 1
-        return -1
-      else
-        counter += 1
+    for x in index...size
+      if @items[x] == nil
+        return x
       end
     end
-    return counter
+
+    for y in 0...index
+      if @items[y] === nil
+        return y
+      end
+    end
+    return -1
   end
 
   # Simple method to return the number of items in the hash
@@ -117,5 +115,5 @@ class OpenAddressing
     saved_items.each do |item|
       self[item.key] = item.value
     end
-  end 
+  end
 end

@@ -1,0 +1,15 @@
+1. Hopscotch Hashing
+   Hopscotch Hashing uses two hashing methods. When it tries to place an item in the array, and a collision occurs, it runs that item through the second hashing function, if that second entry
+   is taken as well, it will re-hash the entry with the second hash function to find another spot, this happens until all collisions are resolved.
+2. 2 Choice Hashing
+   2 Choice Hashing employes 2 hashing functions and a second data structure for buckets. An entry is process by both hashing functions, and which ever has the least amount of entries in
+   the bucket gets used to place the entry in the array.
+3. Robin Hood Hashing
+   Similar to Open Addressing, Robin Hood Hashing moves entries around how far they are from their initial buckets, where the entry is originally hashed. It moves entries that are closer to
+   their initial buckets compared to the entries that need to be inserted.
+4. Middle Out Hashing (my own implementation)
+   This would consist of one hashing alogorithm. When a collsion occurs, instead of looking for the next possible entry it jumps to the middle, and moves out from there. The probe will check
+   till the end of the array. If no free entries are found it goes back the other way starting from the middle.
+
+   The down side to this type of hashing would be lookup speed as it'll have to search based on the order of which the items instead of being able to process where the item got put in the
+   array. 

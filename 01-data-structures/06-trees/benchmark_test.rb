@@ -1,0 +1,29 @@
+require 'benchmark'
+require_relative 'binary_tree/binary_search_tree.rb'
+require_relative 'binary_heap/min_heap.rb'
+
+#Min-Heap Test
+heap = MinHeap.new
+
+Benchmark.bm do |x| 
+  x.report do
+    for i in (1..10_000) do
+      puts "generating #{i} iteration"
+      node = Node.new("#{i}", i)
+      heap.insert(node)
+    end
+  end
+end
+
+root = Node.new("1", 1)
+tree = BinarySearchTree.new(root)
+
+Benchmark.bm do |x|
+  x.report do
+    for i in (2..10_000) do
+      puts "generating #{i} iteration"
+      node = Node.new("#{i}", i)
+      tree.insert(root, node)
+    end
+  end
+end

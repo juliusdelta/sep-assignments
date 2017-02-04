@@ -1,0 +1,44 @@
+1. Algorithm - Excercise
+
+DEF excercise(STRING day_of_week, HASH weekly_work_out_plan)
+    IF day_of_week == "Sunday"
+       puts "It's rest day"
+    ELSE
+    weekly_work_out_plan.each do |day, plan|
+               IF day == day_of_week
+                  return plan
+               END IF
+        END LOOP
+    END IF
+    
+END DEF
+
+2. Algorithm - Brushing Teeth
+
+DEF brush_teeth(BOOL has_eaten_breakfast)
+    UNLESS has_eaten_breakfast == false
+           brush_is_ready = rinse(apply_toothpaste(toothbrush))
+           teeth.each do |tooth|
+                     brush(tooth) 
+           END LOOP
+
+           rinse(mouth)
+    END UNLESS
+END DEF
+
+3. Algorithm - Waking Up
+
+DEF wake_up(DATETIME current_time)
+    IF current_time < 7:00AM
+       puts "It's too early"
+       sleep
+    ELSE IF current_time > 8:30AM && current_time < 9:30AM
+       drink_water
+       make_coffee
+       shower
+    ELSE IF current_time > 9:31AM
+       panic(me)
+       rush_morning(me)
+       is_late = true
+    END IF
+END DEF

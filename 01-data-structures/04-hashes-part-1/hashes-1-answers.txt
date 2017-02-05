@@ -1,0 +1,7 @@
+Simply doubling the array won't always gurantee a "one time fix" for instances where some keys end up the same. Depending on
+the hashing function, you can end up repeatedly having to double the array in to resolve one collision. If you were to go another
+route based on some other mathematical property, like prime numbers, this would have a much smaller chance of happening.
+
+This is a very expensive operation for just one collision. Especially if it had to happen mulitple times like in the above
+hypothtical. Then you end up having memory allocation for an array potentially much larger than you actually need. Doubling
+is not a good solution.

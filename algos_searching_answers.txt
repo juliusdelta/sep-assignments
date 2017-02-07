@@ -1,0 +1,15 @@
+1. Using Linear Search to search [A, B, C, D, E, F, G] for [G] would find it on 7th iterations.
+2. Using Binary Search to search [A, B, C, D, E, F, G] for [G] would find it on the 3rd iteration.
+3. fib(10) = 34, fib(11) = 55, fib(12) = 89
+
+Comparison of Iterative Fibonnaci and Recursive Fibonnaci
+              user     system      total        real
+Iterative  0.000000   0.000000   0.000000 (  0.000004)
+Recursive  0.000000   0.000000   0.000000 (  0.001089)
+
+It appears the iterative solution is a bit faster. For 1 million elements, the stack level for the recursive solution was too deep and it errored out after about 10,000. 
+
+
+1. For an unsorted collection of a million items I'd use iterative solution so I can take the data in how ever I'd want and so I wouldn't over load my memory with a recursion stack.
+
+2. If the collection of a million items is sorted I'd use an iterative binary search. They appear to work faster for larger collections as the recursion stack isn't as large. 

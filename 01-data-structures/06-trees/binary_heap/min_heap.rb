@@ -13,12 +13,12 @@ class MinHeap
     unless @heap[0] == @heap[node_index]
       bubble_up(node_index)
     end
-    set_left_right(0)
+    set_left_right
   end
 
   def delete
     @heap.shift
-    set_left_right(0)
+    set_left_right
   end
 
   def find
@@ -59,21 +59,18 @@ class MinHeap
       end
   end
 
-  def set_left_right(index)
-    left_child = get_left_child(index)
-    right_child = get_right_child(index)
+  def set_left_right
+    @heap.each_with_index do |x, index| 
+      left_child = get_left_child(index)
+      right_child = get_right_child(index)
+      unless @heap[left_child] == nil
+        @heap[index].left = @heap[left_child]
+      end
 
-    unless @heap[left_child] == nil
-      @heap[index].left = @heap[left_child]
-    end
+      unless @heap[right_child] == nil
+        @heap[index].right = @heap[left_child]
+      end
 
-    unless @heap[right_child] == nil
-      @heap[index].right = @heap[left_child]
-    end
-
-    until index == @heap.size - 1
-      index += 1
-      set_left_right(index)
     end
   end
 

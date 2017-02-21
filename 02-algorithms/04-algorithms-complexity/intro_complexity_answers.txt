@@ -1,0 +1,31 @@
+1. An algorithms that has O(1) is like a McLaren F1, and the O(n^2) is more like a bicycle.
+
+2. Big-Ω of Binary Search is O(1). Which means that in the case that the selected mid-point is the searched for target, it will return immediately. 
+
+3. The Big-O of Binary Search is O(log n). Which means that the case in which the selected target is the last possible element found.
+
+4. The bounded case of Binary Search is O(log n) due to the fact that the average bounded case would be o((log n)/2) in which the constants would be removed.
+
+6. The limit of the data is logarithmic.
+
+7. The Big O is O(log n)
+
+8.
+def linear_search(array)
+    input_size = 0
+    if array.size == 0
+       return
+    end
+    array.each do |x|
+    input_size += 1
+       if array[x] == value
+          return "Value after #{i + 1} iterations. Input size was #{input_size}"
+       end
+    end
+end
+
+10. Big O of Binary Search is logarithmic.
+
+11. Big Omega of Binary Search is constant in the case the first elemnt is choosenis the target element.
+
+12. The Big Theta of Binary Search is logarithmic. 

@@ -1,0 +1,11 @@
+1. This is a constant algorithm or O(1). It will always take the same amount of time to print the statement.
+
+2. This is a linear algorithm or O(n). It iterates over each item in the given collection in order to make a comparison. So the time will directly correlate to the number of items in the collection.
+
+3. This is a quadratic algorithm or O(n^2) as it's iterating through the "first" dimension of the array and then has another nested iteration loop for the "second" dimension.
+
+4. This is loglinear algorithm or O(2^n) as it's iterating from the collection down to 1, but recursively calling itself twice. Because it's using recursion in that manner that builds an exponetial stack of calls. For the first permutation it's calling n-1 and n-2 but for the next one it's calling 2 more times for each "n-1" AND "n-2" giving it a stack trace count of 4, then each of those 4 will then call again adding 2 to each, giving 8 calls etc. This happens "n" times till n is equal to one, and twice in each iteration, leaving us with a complexity of O(n^2)
+
+5. This is a linear algorithm or O(n) becuase it's iterating down to 1 from the number down to 1.
+
+6. The comparitive operations are linear but because of the recursive calls O(n log n). This is due to the swaps happening a small number of times, usually less than "n" but it still has to iterate somewhat with the pivot point and comparison operators. It should be noted that a worst case for this can be O(n^2) while the probabilty of such is low.

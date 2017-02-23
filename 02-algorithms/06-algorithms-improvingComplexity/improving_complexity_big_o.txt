@@ -1,0 +1,7 @@
+1. Original "Poor" Implementaiton:
+   * This algorithm is extremely slow as it has to iterate through the array at least 2 times along with making comparisons. This leads me to believe this is O(n^2) as far as time complexity goes.
+
+2. My Implementation for both Space & Time Complexity Improvments:
+   * I used heap sort as my sorting algorithm which is O(n log n) to improve the overall performance of th method. I also used the `Class::Array.flatten` method to turn the array of subarrays into one large array. Therefore, I'm concluding that becuase of the heap sort the it's O(n log n).
+
+It should be noted that I'm not 100% sure of the underlying implentation of the `flatten` method. All I know is that it recursively returns a new array of all the arrays "merged" together. I check the ruby source code to investigate this method, but since I think it was in C, I couldn't quite make sense of it. 
